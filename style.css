@@ -24,6 +24,7 @@ p {
 
 .input {
   height: 40px;
+  font-size: 20px;
 }
 
 .form-1 {
@@ -31,7 +32,7 @@ p {
 }
 
 #submit {
-  height: 40px;
+  height: 70px;
   width: 100px;
   background-color: green;
   color: aliceblue;
@@ -43,4 +44,9 @@ p {
   color: blue;
   font-weight: bold;
   margin: 10px;
+}
+
+.float {
+  float: right;
+  font-size: 30px;
 }
