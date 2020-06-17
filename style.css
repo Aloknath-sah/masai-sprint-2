@@ -1,3 +1,13 @@
+#heading {
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(197, 39, 39);
+}
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+}
+
 .flex > div > div {
   display: flex;
 }
@@ -9,9 +19,28 @@
 p {
   font-size: 30px;
   font-weight: bold;
-  color: green;
+  color: red;
 }
 
 .input {
   height: 40px;
+}
+
+.form-1 {
+  display: flex;
+}
+
+#submit {
+  height: 40px;
+  width: 100px;
+  background-color: green;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.form-1 > div {
+  font-size: 25px;
+  color: blue;
+  font-weight: bold;
+  margin: 10px;
 }
