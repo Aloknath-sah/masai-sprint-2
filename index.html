@@ -4,51 +4,17 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="row">
-          <h1>HEALTH<br>ADVISOR</br></h1>
-          <ul class="main-nav">
-            <li><a href="foods.html">foods</a></li>
-            <li>exercise</li>
-            <li>check</li>
-          </ul>
-        </div>
-      </nav>
-        <div class="cont">
-            <p>Welcome to Health Advisory.<br>
-                Where you can check your weight gain or lose.</br></p>
-        </div>
-        <div class="form">
-            <label><b>Add breakfast calories</b></label>
-            <input type="number" id="bcalo">
-            <label><b>Add lunch calories</b></label>
-            <input type="number" id="lcalo">
-            <label><b>Add dinner calories</b></label>
-            <input type="number" id="dcalo">
-            <br>
-            <button id="btn1" class="check">Add Intake Calories</button>
-            <br>
-            <p id="p2">Total Calories Consumed </p>
-            <br>
-            <button id="btn3" class="check">Show fat loss/gain</button>
-        </div>
-        <div class="form1">
-            <label><b>Burned calories from cycling</b></label>
-            <input type="text" id="cycling_cal" >
-            <label><b>Burned calories by walking</b></label>
-            <input type="number" id="walking_cal">
-            <label><b>Burned calories through exercise</b></label>
-            <input type="number" id="exercise_cal">
-            <br>
-            <button id="btn2" class="check">Add Burned Calories</button>
-            <br>
-            <p id="p3">Total Calories Spent </p>
-            <br>
-            <p id="p1">Net gain/lose calories </p>
-        </div>
-    </header>
-   
+    <form class="form-1">
+      food:<input class="input" /> calories:<input class="input" />
+      exercise:<input class="input" /> spent calories:<input class="input" />
+      <input type="submit" />
+    </form>
+    <hr />
+
+    <div class="flex">
+      <div id="res"></div>
+    </div>
+
+    <script type="text/javascript" src="myproject.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>

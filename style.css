@@ -90,14 +90,9 @@ input {
   text-align: center;
 }
 
-#first-image {
-  width: auto;
-  height: 100px;
-  background-image: url(https://images.unsplash.com/photo-1509479100390-f83a8349e79c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
-}
 @media (max-width: 600px) {
   header {
-    height: 900px;
+    height: 1100px;
     width: auto;
     background-image: url(https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
   }
@@ -106,10 +101,6 @@ input {
   }
   .form {
     margin-left: 20px;
-  }
-  .main-nav {
-    float: left;
-    display: block;
   }
 }
 @media (max-width: 992px) and (min-width: 600px) {
