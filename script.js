@@ -31,16 +31,17 @@ function getFormData(elem) {
   total_exp_calo += add_exp_calo;
   total = add_calo - add_exp_calo;
 
-  // if (total < 0) {
-  //   ans = (total * -1) / 7000;
-  //   var myres = ans.toFixed(2);
-  //   myres.textContent = "fat loss by " + myres + " kg";
-  // } else {
-  //   ans = total / 7000;
+  if (total < 0) {
+    ans = (total * -1) / 7000;
+    var myres = ans.toFixed(2);
+    alert("fat loss by " + myres + " kg");
+  } else {
+    ans = total / 7000;
 
-  //   var myres = ans.toFixed(2);
-  //   myres.textContent = "fat gain by " + myres + " kg";
-  // }
+    var myres = ans.toFixed(2);
+    alert("fat gain by " + myres + " kg");
+  }
+
   formdata.add_food = add_food;
   formdata.add_calo = total_add_calo;
   formdata.add_exercise = add_exercise;
