@@ -4,19 +4,56 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div class="float"><a href="foods.html">foods</a></div>
+    <div class="float"><a href="foods.html">blog</a></div>
     <div id="heading">HEALTH<br />ADVISOR</div>
     <hr />
+    <div class="main" >
     <form class="form-1">
-      <div>food:<input class="input" /></div>
-      <div>calories:(in kcal)<input class="input" /></div>
-      <div>exercise:<input class="input" /></div>
-      <div>spent calories:(in kcal)<input class="input" /></div>
-      <div><input type="submit" id="submit" /></div>
+      <div>
+        <div> Add food:</div>
+        <input class="input" />
+      </div>
+      <br/>
+      <div>
+        <div>Add calories:(in kcal)</div>
+          <input class="input" />
+      </div>
+      <br/>
+      <div>
+        <div>Add exercise done:</div>
+        <input class="input" />
+      </div>
+      <br/>
+      <div>
+        <div>Add spent calories:(in kcal)</div>
+        <input class="input" />
+      </div>
+      <br/>
+      <div>
+        <input type="submit" id="submit" />
+      </div>
     </form>
     <div class="flex">
-      <div id="res"></div>
+      <table id="res">
+        <tr>
+          <th>Food List </th>
+          <th>Calories </th>
+          <th>Exercises </th>
+          <th>Expense Calories </th>
+        </tr>
+      </table>
     </div>
+    <div class="total">
+      <h3>Total Added Calorie</h3>
+      <p id="totadd"></p>
+      <h3>Total Expense Calorie</h3>
+      <p id="totexp"></p>
+      <h3>Total Calorie</h3>
+      <p id="total_cal"></p>
+      <button onClick="handleClick()" >how much i gain/lose weight</button>
+      <p id="btn" ></p>
+    </div>
+  </div>
 
     <script type="text/javascript" src="script.js"></script>
   </body>

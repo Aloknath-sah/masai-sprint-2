@@ -4,8 +4,24 @@
   color: rgb(197, 39, 39);
 }
 
-body {
-  background-image: url(https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+.main{
+  display: flex;
+}
+
+.flex{
+  width: 50%;
+  padding: 20px;
+  margin-left: 40px;
+}
+
+td{
+  font-size: 18px;
+}
+
+.total{
+  border: 1px solid black;
+  width: 25%;
+  padding: 20px;
 }
 
 .flex > div > div {
@@ -27,13 +43,15 @@ p {
   font-size: 20px;
 }
 
-.form-1 {
-  display: flex;
+.form-1{
+  width: 25%;
+  background-color: lightblue;
+  padding: 20px;
 }
 
 #submit {
-  height: 70px;
-  width: 100px;
+  height: 50px;
+  width: 100%;
   background-color: green;
   color: aliceblue;
   font-size: 20px;
@@ -43,10 +61,29 @@ p {
   font-size: 25px;
   color: blue;
   font-weight: bold;
-  margin: 10px;
+  
+  width: 100%;
 }
 
 .float {
   float: right;
   font-size: 30px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.form-1 > div > * {
+  width: 100%;
+}
+
+#res > * > * > *{
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#res > * > * {
+  padding: 10px;
+  text-align: center;
 }

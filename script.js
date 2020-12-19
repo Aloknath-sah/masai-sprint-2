@@ -2,6 +2,7 @@ var global = [];
 var total_add_calo = 0;
 var total_exp_calo = 0;
 var total = 0;
+var formdata = {};
 
 window.onload = function () {
   var add_calo = document.querySelector(".form-1");
@@ -13,15 +14,12 @@ function handleform1() {
   var elem = event.target.querySelectorAll(".input");
   var data = getFormData(elem);
   global.push(data);
-  for (var i = 0; i < elem.length; i++) {
-    elem[i].value = " ";
-  }
-
-  renderDOM(global);
+  console.log(global)
+  renderDOM(global) 
 }
 
 function getFormData(elem) {
-  var formdata = {};
+  
   var add_food = elem[0].value;
   var add_calo = Number(elem[1].value);
   var add_exercise = elem[2].value;
@@ -34,87 +32,54 @@ function getFormData(elem) {
   if (total < 0) {
     ans = (total * -1) / 7000;
     var myres = ans.toFixed(2);
-    alert("fat loss by " + myres + " kg");
+    var weight = "loose"
   } else {
     ans = total / 7000;
 
     var myres = ans.toFixed(2);
-    alert("fat gain by " + myres + " kg");
+    var weight = "gain"
   }
-
-  formdata.add_food = add_food;
-  formdata.add_calo = total_add_calo;
-  formdata.add_exercise = add_exercise;
-  formdata.exp_calo = total_exp_calo;
-  formdata.total = total;
-
+  var formdata = {add_food, add_calo, add_exercise, add_exp_calo,total_add_calo, total_exp_calo,total}
+  handleClick(myres, weight)
   return formdata;
+}
+
+function handleClick(myres, weight) {
+  document.getElementById("btn").innerHTML = "You have "+weight +" "+myres+" kg fat."
 }
 
 function renderDOM(global) {
   var div = document.getElementById("res");
-  div.innerHTML = "";
-  var cont = document.createElement("div");
-  var header = createHeader();
+  
+  var totadd = global[global.length-1].total_add_calo
+  document.getElementById("totadd").textContent = totadd+"cal"
 
+  
+  var totexp = global[global.length-1].total_exp_calo
+  document.getElementById("totexp").textContent = totexp+"cal"
+
+  var total_cal = global[global.length-1].total
+  document.getElementById("total_cal").textContent = total_cal+"cal"
+  console.log(totexp)
   for (var i = 0; i < global.length; i++) {
-    var row = createRow(
-      global[i].add_food,
-      global[i].add_calo,
-      global[i].add_exercise,
-      global[i].exp_calo,
-      global[i].total
-    );
-    cont.append(row);
+    console.log(global[i])
+    var main = document.createElement("tr")
+    main.setAttribute("class", "main_class")
+
+    var add_food = document.createElement("td");
+    add_food.append(global[i].add_food);
+
+    var add_calo = document.createElement("td");
+    add_calo.append(global[i].add_calo);
+
+    var add_exercise = document.createElement("td");
+      add_exercise.append(global[i].add_exercise);
+
+      var exp_calo = document.createElement("td");
+      exp_calo.append(global[i].add_exp_calo);
+
+    main.append(add_food, add_calo, add_exercise, exp_calo)
+    
   }
-  div.append(header);
-  div.append(row);
-}
-
-function createRow(add_food, add_calo, add_exercise, exp_calo, total) {
-  var div = document.createElement("div");
-
-  var my_food = document.createElement("p");
-  my_food.textContent = add_food;
-  var my_calo = document.createElement("p");
-  my_calo.textContent = add_calo;
-  var my_exercise = document.createElement("p");
-  my_exercise.textContent = add_exercise;
-  var my_exp_calo = document.createElement("p");
-  my_exp_calo.textContent = exp_calo;
-  var total_calo = document.createElement("p");
-  total_calo.textContent = total;
-
-  div.append(my_food, my_calo, my_exercise, my_exp_calo, total_calo);
-
-  return div;
-}
-
-function createHeader() {
-  var div = document.createElement("div");
-
-  var food_header = document.createElement("p");
-  food_header.textContent = "Food Added";
-
-  var total_consumed_calo = document.createElement("p");
-  total_consumed_calo.textContent = "Total consumed Calories";
-
-  var exercise_header = document.createElement("p");
-  exercise_header.textContent = "Exercise";
-
-  var total_exp_calo = document.createElement("p");
-  total_exp_calo.textContent = "Total Expenditure Calories";
-
-  var total_calories = document.createElement("p");
-  total_calories.textContent = "Total gain/loss";
-
-  div.append(
-    food_header,
-    total_consumed_calo,
-    exercise_header,
-    total_exp_calo,
-    total_calories
-  );
-
-  return div;
+  div.append(main);
 }
